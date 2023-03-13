@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notebook</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" defer></script>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+    <div class="col-12 col-sm-8 offset-sm-2">
+      <%= yield %>
+    </div>
+  </body>
+</html>

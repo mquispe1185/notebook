@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Notes</h1>
+<div>
+  <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+</div>
+<div data-controller="note">
+  <table id="notes">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @notes.each do |note| %>
+      <tr>
+        <td><%= note.title %></td>
+        <td><%= note.body %></td>
+        <td><%= note.date %></td>
+        <td><%= link_to "Show this note", note %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+ 
+</div>
+
+<%= link_to "New note", new_note_path %>
