@@ -1,8 +1,8 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <%= form_with(url: notes_path, method: :get, class: 'd-flex mx-auto', data: { turbo: false }) do |form| %>
+          <%= form.text_field :q, placeholder: 'Search by title or body', autocomplete: "off", class: 'form-control' %>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+    <% end %>
   </div>
 </nav>

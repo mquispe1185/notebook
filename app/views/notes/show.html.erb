@@ -2,9 +2,15 @@
 
 <%= render @note %>
 
-<div>
-  <%= link_to "Edit this note", edit_note_path(@note) %> |
-  <%= link_to "Back to notes", notes_path %>
-
-  <%= button_to "Destroy this note", @note, method: :delete %>
+<div class="row col-12 col-sm-6">
+  <div class="col">
+    <%= link_to "<< Back", notes_path, class: 'btn btn-outline-secondary btn-sm' %>
+   </div>
+  <div class="col">
+    <%= link_to "Edit this note", edit_note_path(@note), class: 'btn btn-outline-success btn-sm' %>
+  </div>
+   
+  <div class="col">
+    <%= button_to "Delete", @note, method: :delete, class: 'btn btn-outline-danger btn-sm' %>
+  </div>
 </div>
